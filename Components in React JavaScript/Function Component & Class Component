@@ -1,0 +1,43 @@
+import './App.css';
+import {Component} from 'react'                    //We have to import {Component} in order to use Class Component
+
+function App() {                                   //App Component or Main Component
+  return (                                        //Children Component of App Component or Parent Component--
+    <div className="App">
+      <FirstComponent></FirstComponent>             
+      <SecondComponent></SecondComponent>  
+      <ThirdComponent/>  
+      <FourthComponent/>       
+    </div>                                         //--or Main Component, Written inside return(firstComp. & SecondComp.) 
+  );
+}
+
+function FirstComponent() {                        //These are Called Components or Function Components
+  return (
+    <div className="FirstComponent">First Component</div>
+  )
+}
+
+function SecondComponent(){
+  return(
+    <div className="SecondComponent">Second Component</div>
+  )
+}
+
+class ThirdComponent extends Component{     // These are Called Class  Component in order to use Class Component we need to import, import {Component} from 'react' 
+  render() {
+    return(
+      <div className="ThirdComponent">Third Component</div>
+    )
+  }
+}
+
+class FourthComponent extends Component{
+  render() {
+    return(
+      <div className="FourthComponent">Fourth Component</div>
+    )
+  }
+}
+
+export default App;
