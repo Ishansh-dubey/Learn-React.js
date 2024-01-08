@@ -8,7 +8,7 @@ function App() {                                   //App Component or Main Compo
       <SecondComponent></SecondComponent>  
       <ThirdComponent/>  
       <FourthComponent/>       
-    </div>                                         //--or Main Component, Written inside return(firstComp. & SecondComp.) 
+    </div>                                         //--or Main Component, Written inside return(firstComp. & SecondComp. & ThirdComp. & FourthComp.) 
   );
 }
 
