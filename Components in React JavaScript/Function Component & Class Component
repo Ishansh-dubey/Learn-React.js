@@ -6,8 +6,8 @@ function App() {                                   //App Component or Main Compo
     <div className="App">
       <FirstComponent></FirstComponent>             
       <SecondComponent></SecondComponent>  
-      <ThirdComponent/>  
-      <FourthComponent/>       
+      <ThirdComponent></ThirdComponent>  
+      <FourthComponent></FourthComponent>        
     </div>                                         //--or Main Component, Written inside return(firstComp. & SecondComp. & ThirdComp. & FourthComp.) 
   );
 }
