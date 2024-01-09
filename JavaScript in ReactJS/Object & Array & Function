@@ -1,0 +1,32 @@
+const person ={                                             //Object in JavaScript
+    name: 'Ranga',
+    address: {
+        Line1: 'Baker Street',
+        city:'London',
+        country:'UK', 
+    },
+    profiles: ['twitter','Instagram','LinkedIN'],           //Array inside the object in JavaScript
+    printProfile: () => {                                   //Arrow is function which help to make function inside the object
+        person.profiles.map(                                  //Map function can print all the proflies given above or array     
+            profile =>  console.log(profile)
+            
+        )
+    }
+}
+
+
+
+export default function LearningJavaScript(){                //This is a function in which in return we write JSX code and export default is used before function so this file get accessd to another file or get acessed by App.js which is main file to show the output 
+    return(
+        <>
+        <div>{person.name}</div>
+        <div>{person.address.Line1}</div>
+        <div>{person.address.city}</div>
+        <div>{person.address.country}</div>
+        <div>{person.profiles[0]}</div>
+        <div>{person.profiles[1]}</div>
+       
+        <div>{ person.printProfile() }</div>
+        </>
+    )
+}
