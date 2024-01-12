@@ -1,0 +1,121 @@
+//App.js file
+
+import './App.css';
+import Counter from './components/Counter/Counter';
+
+
+
+
+function App() {                                   //App Component or Main Component
+  return (                                        //Children Component of App Component or Parent Component--
+    <div className="App">
+     <Counter/> 
+       
+    {/* <Counter/>                             //This will return the default value from defaultProp      */}
+    
+     
+    </div>                                         //--or Main Component, Written inside return(firstComp. & SecondComp.) 
+  );
+}
+
+
+export default App;
+
+
+
+
+
+
+
+
+
+//Counter.js file
+
+import { useState } from 'react'
+
+import './Counter.css'
+import CounterButton from './CounterButton'
+
+export default function Counter(){
+
+  const[count, setCount] = useState(0); //useState help us to return array here count is a variable which retun the 1st value which is written by useState which is the current value of the state and setCount will map to the fuction to update the state
+
+  function incrementCounterParentFunction(by) {
+    setCount(count + by)
+  }
+
+  function decrementCounterParentFunction(by) {
+    setCount(count - by)
+    
+  }
+
+  function resetCounterParentFunction() {
+    setCount(0)
+    
+  }
+
+  return(
+    <>
+     <span className="totalCount">{count}</span>
+     <CounterButton by={1} 
+        incrementMethod={incrementCounterParentFunction}  
+        decrementMethod = {decrementCounterParentFunction}/> 
+     <CounterButton by={2} 
+        incrementMethod={incrementCounterParentFunction} 
+        decrementMethod = {decrementCounterParentFunction}/> 
+     <CounterButton by={5}
+        incrementMethod={incrementCounterParentFunction} 
+        decrementMethod = {decrementCounterParentFunction}/>  
+      <button className="resetButton"
+        onClick={resetCounterParentFunction}
+        >Reset</button>                             {/*In this button we have onClick which is calling above function resetCounterParentFunction */}
+    </>
+  )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//CounterButton.js file
+
+
+//  import {propTypes} from 'prop-types'  //This will help to import propTypes from prop-types to this file
+ 
+ export default function CounterButton({by, incrementMethod, decrementMethod}){                           //This is a function in which in return we write JSX code and export default is used before function so this file get accessd to another file or get acessed by App.js which is main file to show the output 
+
+
+      return(                                           //In return JSX code is written
+        <div className="Counter">
+        <div>
+              <button className="counterButton" 
+              onClick={() => incrementMethod(by) }
+              >+{by}</button>                             {/*In button we have onClick which is calling above function IncrementCounterFunction */}
+              
+              <button className="counterButton"
+              onClick={() => decrementMethod(by)}
+              >-{by}</button>                             {/*In button we have onClick which is calling above function DecrementCounterFunction */}
+        </div>
+       </div>
+      
+    )
+}
+
+// CounterButton.propTypes = {  ////propType puts the condition to only accept certain types of value like number, the condition is given by 'by: PropTypes.number
+//   by: PropTypes.number
+// }
+
+// CounterButton.defaultProp = {  ////defaultProp puts element on default value which is given by 'by:' which is written below 
+//   by: 5
+// }
